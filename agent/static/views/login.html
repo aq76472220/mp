@@ -1,0 +1,13 @@
+<div class="login">
+    <div class="login-con clearfix" :style="{left: form_box_left}">
+        <div class="el-logo fl">
+            <div class="el-login-context"></div>
+            <img :src="agent_login_img">
+        </div>
+        <div class="form-box fr">
+            <div class="form-con">
+                <login-form ref="login" @on-success-valid="handleSubmit"></login-form>
+            </div>
+        </div>
+    </div>
+</div>

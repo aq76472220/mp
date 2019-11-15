@@ -1,0 +1,1 @@
+define([],function(){return{cookieExpires:1,baseUrl:{dev:"http://qingxiaoyun.com/index.php/",pro:window.location.protocol+"//"+document.domain+"/index.php/"},homeName:"survey"}});

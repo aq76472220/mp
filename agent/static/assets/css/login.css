@@ -1,0 +1,137 @@
+/*
+* @Author: brooke
+* @Date:   2018-10-29 13:12:33
+* @Last Modified by:   brooke
+* @Last Modified time: 2018-10-29 15:24:42
+*/
+
+.login{
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/login-bg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.login .login-con{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    width: 900px;
+    height: 470px;
+}
+
+.login .form-box{
+    height: 100%;
+    background: #fff;
+}
+
+.login .form-box{
+    height: 100%;
+    background: #fff;
+}
+
+.login .form-box .form-con{
+    padding: 56px 90px 56px 50px;
+}
+
+.login .el-logo .el-login-context{
+    width: 100%;
+    height: 100%;
+    background: #192848;
+    opacity: 0.5;
+}
+
+.login .el-logo img{
+    z-index:2;
+    position: fixed;
+    top: 135px;
+    left: 80px;
+}
+
+.login .el-logo, .form-box{
+    width:450px;
+    height:100%;
+}
+
+
+.el-login-form .el-icon{
+    width:20px;
+    height:20px;
+    top: 10px;
+    position: absolute;
+    background-repeat:no-repeat;
+}
+
+.el-login-form .el-icon.el-icon-user{
+    background-image: url(../../assets/images/user.png);
+}
+
+.el-login-form .el-icon.el-icon-password{
+    background-image: url(../../assets/images/Password.png);
+}
+
+.el-login-form .el-icon.el-icon-code{
+    background-image: url(../../assets/images/Code.png);
+    width: 23px;
+    top: 11px;
+    height: 23px;
+    background-size: 100% 100%;
+}
+
+.el-login-form .el-input__inner{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 42px;
+    height: 42px;
+    padding-left: 42px;
+    font-size: 14px;
+    font-family:Microsoft YaHei
+}
+
+.el-login-form .el-verify-code .el-input{
+    width: 185px;
+}
+
+.el-login-form .el-form-item{
+    margin-bottom: 45px;
+}
+
+.el-login-form .el-verify-code img{
+    width: 95px;
+    height: 43px;
+    cursor:pointer;
+}
+
+.el-login-form .el-submit .el-button{
+    border-radius: 28px;
+    font-size: 16px;
+    background-color: #4761ff;
+    border-color: #4763ff;
+    box-shadow: 0px 4px 4px #5753f5;
+    color:#fff;
+    width: 100%;
+}
+
+.el-login-form .el-checkbox .el-checkbox__inner{
+            width: 16px;
+            height: 16px;
+}
+
+.el-login-form .el-checkbox .el-checkbox__inner::after{
+    left: 4px;
+    top: 0px;
+    width: 6px;
+    height: 8px;
+}
+
+.el-login-form .el-checkbox .is-checked .el-checkbox__inner{
+    background-color: #4a63ff;
+    border-color: #4a63ff;
+}
+
+.el-login-form .el-checkbox.is-checked .el-checkbox__label{
+    color: #4a63ff;
+}

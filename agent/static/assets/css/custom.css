@@ -1,0 +1,28 @@
+
+.inputTxt{
+    width: 217px;
+}
+.tab_h{
+    height: 630px;
+    margin-top: 20px;
+}
+
+.customer .el-form-item.is_error .el-input__inner,
+.customer .el-form-item.is_error .el-input__inner:focus,
+.customer .el-form-item.is_error .el-textarea__inner{
+    border-color: #f56c6c;
+}
+
+.customer .el-form-item__success {
+    color: #0066FF;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.customer .el-form-item {
+    margin-bottom: 37px;
+}

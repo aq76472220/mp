@@ -1,0 +1,80 @@
+<div class="smallProgram">
+    <div class="com_til">
+        <span>小程序管理</span>
+    </div>
+    <div class="clearfix">
+        <div class="fr">
+             <el-form ref="form" :model="form" label-width="80px" class='fl'>
+                <el-select v-model="form.state" class="fl md10"  placeholder="请选择状态">
+                    <el-option v-for="(state, index) in states" :label="state.title" :key="index" :value="state.id"></el-option>
+                </el-select>
+                <el-input v-model="form.name" class="fl inputTxt md10" placeholder="请输入账号或者名称"></el-input>
+             </el-form>
+            <span class="fl md10">
+               <el-button type="primary btn_lan" class='ssuo_btn' size="medium" @click="search">搜  索</el-button>
+            </span>
+            <span class="fl md10">
+                <el-button size="medium" @click="empty">清  空</el-button>
+            </span>
+        </div>
+    </div>
+    <!--表格-->
+      <div class="tab_h center">
+         <el-table
+            :data="tableSmallProgram"
+            height="540"
+            style="width: 100%" >
+            <el-table-column
+                prop="app_id"
+                label="ID"
+                width="180"
+            >
+            </el-table-column>
+            <el-table-column
+              prop="applet_name"
+              label="小程序名称"
+              >
+            </el-table-column>
+            <el-table-column
+              prop="account"
+              label="所属客户"
+               width="180">
+            </el-table-column>
+             <el-table-column
+              prop="created_at"
+              label="创建时间"
+               width="180">
+            </el-table-column>
+             <!-- <el-table-column
+              prop="package_name"
+              label="所属套餐"
+               >
+            </el-table-column> -->
+             <!-- <el-table-column
+              prop="expiration_time"
+              label="到期时间"
+               width="180">
+            </el-table-column> -->
+             <!-- <el-table-column
+              prop="state"
+              label="状态"
+               width="180"
+             >
+              </el-table-column> -->
+              <el-table-column
+              prop="authorize"
+              label="是否授权小程序"
+             width="180">
+            </el-table-column>
+         </el-table>
+         <!--f分页-->
+            <el-pagination
+              background
+              layout="prev, pager, next"
+              :total="total"
+              :page-size = "size"
+              @current-change="pageChange"
+            class="fenPage">
+            </el-pagination>
+    </div>
+</div>

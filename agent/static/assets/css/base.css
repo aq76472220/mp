@@ -1,0 +1,69 @@
+@charset "utf-8";
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, section, article, aside, header, footer, nav, dialog, figure, hgroup, em, button ,a,input{ margin:0;padding:0;-webkit-tap-highlight-color: rgba(0,0,0,0)}
+html{-webkit-text-size-adjust:none;/*font-size: 62.5%;*/overflow-x:hidden }
+body {min-width:320px; color:#666666;font-size:14px;font-family:  Microsoft YaHei,Arial, Helvetica,"\534E\6587\9ED1\4F53", sans-serif; background:#fafafa; overflow-x:hidden}
+
+table {border-collapse:collapse;border-spacing:0}
+ul,ol,li{list-style:none}
+em,i{font-style:normal}
+img{border:0;max-width:100%; -ms-interpolation-mode: bicubic; -moz-interpolation-mode:bicubic; -webkit-interpolation-mode:bicubic;}
+input,img{vertical-align:middle;}
+input,button,a,select,textarea{margin: 0; padding:0;/*-webkit-appearance:none;*/border:none; font-family: Microsoft YaHei;outline:0;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal}
+strong {font-weight:700}
+cite,em {font-style:normal}
+a{color: #666666;text-decoration: none}
+a{transition:all 0.6s ease;-webkit-transition:all 0.6s ease;-moz-transition:all 0.6s ease;-ms-transition:all 0.6s ease;}
+a:hover{color: #33bf82}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}::-webkit-scrollbar{width:0;height:30px;}
+::-webkit-scrollbar-button{ background:transparent; height:10px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-track-piece{}
+::-webkit-scrollbar-thumb{background:#ebebeb;border-radius:4px;}
+::-webkit-scrollbar-corner{background:#ebebeb;}
+::-webkit-scrollbar-resizer{background:#ebebeb;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input[type="number"]{-moz-appearance:textfield;}
+
+.fl {float:left;}
+.fr {float:right;}
+
+.clearfix {
+    *zoom:1
+}
+.clearfix:before,.clearfix:after {
+    display:table;
+    content:"";
+    line-height:0
+}
+.clearfix:after {
+    clear:both
+}
+
+.row{width: 100%}
+
+.row:before,.row:after {
+    display:table;
+    content:"";
+    line-height:0
+}
+.row:after {
+    clear:both
+}
+.overflowHiden{overflow: hidden}
+
+.m-b-20{
+    margin-bottom: 20px !important;
+}
+
+
+

@@ -1,0 +1,1 @@
+var modules=["routes/agent-router","tpl/agent","tpl/login","config/index"];define(modules,function(e,n,o,t){return[{path:"/agent/login",name:"login",component:o},{path:"/",name:"_home",redirect:"/agent/"+t.homeName,component:n,children:e}]});

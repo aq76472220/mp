@@ -1,0 +1,109 @@
+<div class="incomeBox">
+    <div class="">
+        <div class="com_til">
+            <span>收支明细</span>
+        </div>
+        <el-row class="mingxi_box center">
+            <el-col :span="8">
+                <div class="grid-content">
+                    <span class="dl_jin dl_jin1">
+                        <p class="pd1">新增入账</p>
+                        <p class="pd2">{{ incomeNum }}</p>
+                    </span>
+                 </div>
+            </el-col>
+            <el-col :span="8">
+                <div class="grid-content">
+                    <span class="dl_jin dl_jin2">
+                        <p class="pd1">提单消耗</p>
+                        <p class="pd2">{{ expendNum }}</p>
+                    </span>
+                 </div>
+            </el-col>
+            <el-col :span="8">
+                <div class="grid-content">
+                    <div class="grid-content">
+                        <span class="dl_jin dl_jin3">
+                            <p class="pd1">余额</p>
+                            <p class="pd2">{{ balance }}</p>
+                        </span>
+                     </div>
+                </div>
+            </el-col>
+        </el-row>
+    </div>
+
+    <!--搜索 表格-->
+    <div class="pd10 btn_box sousuo">
+        <span>
+            <el-select v-model="model.form" placeholder="类型" style="border-radius: 20px;" class="borderClass">
+                <el-option
+                  v-for="(form, index) in forms"
+                  :key="index"
+                  :label="form.title"
+                  :value="form.id">
+                </el-option>
+             </el-select>
+        </span>
+        <span>
+            <!--el-date-picker
+                v-model="model.date"
+                align="right"
+                type="date"
+                placeholder="选择日期"
+                class='borderClass'
+                format="yyyy-MM-dd"
+                value-format="yyyy-MM-dd"
+            >
+            </el-date-picker-->
+            <mu-date-input v-model="model.date" placeholder="选择日期"></mu-date-input>
+        </span>
+        <span>
+           <el-button type="primary" class='ssuo_btn' size="medium" round @click="search">搜  索</el-button>
+        </span>
+        <span>
+            <el-button size="medium" round @click="empty">清  空</el-button>
+        </span>
+     </div>
+
+     <div class='tab_h center'>
+        <el-table
+            :data="balanceLogs"
+            height="300"
+            style="width: 100%"
+        >
+            <el-table-column
+                prop="order_id"
+                label="流水号">
+            </el-table-column>
+            <el-table-column
+                prop="create_time"
+                label="时间"
+                width="180">
+            </el-table-column>
+            <el-table-column
+                prop="form"
+                label="类型"
+                width="240">
+            </el-table-column>
+            <el-table-column
+                prop="remark"
+                label="变动明细">
+            </el-table-column>
+            <el-table-column
+                prop="money"
+                label="变动金额">
+            </el-table-column>
+        </el-table>
+
+        <!--f分页-->
+        <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="total"
+            :page-size = "size"
+            @current-change="pageChange"
+            class="fenPage">
+        </el-pagination>
+     </div>
+</div>

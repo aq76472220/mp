@@ -1,0 +1,50 @@
+/*
+* @Author: brooke
+* @Date:   2018-10-29 13:33:09
+* @Last Modified by:   brooke
+* @Last Modified time: 2018-10-29 20:20:45
+*/
+.survey .el-row {
+    margin-bottom: 20px;
+}
+.survey .el-col {
+    border-radius: 4px;
+}
+.survey .grid-content {
+    border-radius: 4px;
+    min-height: 180px;
+    box-shadow:3px 3px 10px #ddd;
+    position: relative;
+}
+.row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+}
+.spot_img{
+    position: absolute;
+    right: 20px;
+    top:13px
+}
+.sm_til{
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+    padding: 30px;
+}
+.font_main{
+    color: #333;
+    font-size: 18px;
+}
+.font_main label{
+    font-size: 32px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.customer_data{
+    background: #fff;
+    box-shadow:3px 3px 10px #ddd;
+    height: 470px;
+    border-radius: 4px;
+    padding: 25px;
+    box-sizing: padding;
+}

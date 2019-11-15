@@ -1,0 +1,19 @@
+<div class="leftBar">
+    <div class="functionLeft leftMenu">
+        <div
+            class="wrapmenu"
+            v-for="(menu,index) in menuList"
+            :class="{on:activeName == menu.name}"
+            :key="index"
+            @click="handleSelect(getNameOrHref(menu))"
+        >
+            <div class="dropdowns">
+                <i class="leftIcon">
+                    <img v-if="activeName == menu.name" :src="_path('./assets/images/' + menu.image.replace('.', '_hover.'))" />
+                    <img :src="_path('./assets/images/' + menu.image)" v-else/>
+                </i>
+                 <p>{{ menu.meta.title }} </p>
+            </div>
+        </div>
+    </div>
+</div>

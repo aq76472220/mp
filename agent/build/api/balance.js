@@ -1,0 +1,1 @@
+define(["libs/api.request"],function(e){return{index:function(t){return e.request({url:"agent/api/auth/balance",method:"get",params:t,auth:!0})}}});

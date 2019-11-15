@@ -1,0 +1,1 @@
+var modules=["vue","vuex","store/module/user","store/module/app"];define(modules,function(e,u,o,s){return e.use(u),new u.Store({state:{},mutations:{},actions:{},modules:{user:o,app:s}})});

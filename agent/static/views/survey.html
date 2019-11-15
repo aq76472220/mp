@@ -1,0 +1,75 @@
+<div class="survey">
+    <div class="">
+        <div class="com_til">
+            <span>数据总览</span>
+        </div>
+        <el-row :gutter="20">
+            <el-col :span="6">
+                <div class="grid-content bg_white">
+                    <em class="spot_img"><img :src="_path('./assets/images/9_spot.png')"/></em>
+                    <p class="sm_til">账户余额</p>
+                    <div class="center">
+                        <span><img :src="_path('./assets/images/9.png')"/> </span>
+                        <span class="font_main"><label>{{ expendNum }}</label></span>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :span="6">
+                <div class="grid-content bg_white">
+                    <em class="spot_img"><img :src="_path('./assets/images/8_spot.png')"/></em>
+                    <p class="sm_til">累计客户</p>
+                    <div class="center">
+                        <span><img :src="_path('./assets/images/8.png')"/> </span>
+                        <span class="font_main"><label>{{ customNum }}</label>个</span>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :span="6">
+                <div class="grid-content bg_white">
+                    <em class="spot_img"><img :src="_path('./assets/images/7_spot.png')"/></em>
+                    <p class="sm_til">即将到期小程序</p>
+                    <div class="center">
+                        <span><img :src="_path('./assets/images/7.png')"/> </span>
+                        <span class="font_main"><label>{{ upcomingDueAppletNum }}</label>个</span>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :span="6">
+                <div class="grid-content bg_white">
+                    <em class="spot_img"><img :src="_path('./assets/images/6_spot.png')"/></em>
+                    <p class="sm_til">已提单</p>
+                    <div class="center">
+                        <span><img :src="_path('./assets/images/6.png')"/> </span>
+                        <span class="font_main"><label>{{ billNum }}</label>单</span>
+                    </div>
+                </div>
+            </el-col>
+        </el-row>
+    </div>
+    <div class="pd10">
+        <div class="com_til">
+            <span>客户数据</span>
+        </div>
+        <div class="customer_data">
+            <div class="clearfix">
+                <el-select v-model="value" placeholder="请选择" class="fl slectBorder"  size='medium'>
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+                    </el-option>
+                </el-select>
+                <el-button type="text" class='fr' @click="customView">查看详情</el-button>
+            </div>
+
+            <!-- 图表 -->
+            <div class="vol-data">
+                <div class="charts" style="width:'100%',height:'6.54rem'">
+                    <div id="myChart" :style="{width:'100%',height:'420px'}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

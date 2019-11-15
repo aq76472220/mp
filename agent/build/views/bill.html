@@ -1,0 +1,141 @@
+<div class="bill">
+    <div class="com_til">
+        <span>
+            提单管理
+        </span>
+    </div>
+    <div class="clearfix">
+        <el-button @click="dialogFormVisible = true" class="btn_lan fl" size="small" type="primary">
+            申请提单
+        </el-button>
+        <!--弹出-->
+        <el-dialog :visible.sync="dialogFormVisible" title="申请提单">
+            <el-form :model="formBill" class="addForm">
+                <el-form-item :label-width="formLabelWidth" label="提单客户">
+                    <el-select filterable="" placeholder="请选择提单客户" v-model="formBill.user_id">
+                        <el-option :key="index" :label="item.phone" :value="item.id" v-for="(item, index) in customs">
+                            <span style="float: left">
+                                {{ item.phone }}
+                            </span>
+                            <span style="float: right; color: #8492a6; font-size: 13px">
+                                {{ item.nickname || '--' }}
+                            </span>
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="提单小程序">
+                    <el-select placeholder="请选择小程序" v-model="formBill.app_id">
+                        <el-option label="新的小程序" v-show="formBill.user_id != ''" value="0">
+                        </el-option>
+                        <el-option :key="index" :label="applet.name ? applet.name : '小程序' + (index + 1)" :value="applet.id" v-for="(applet, index) in applets">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <!-- <el-form-item :label-width="formLabelWidth" label="提单套餐">
+                    <el-select placeholder="请选择套餐" v-model="formBill.package_id">
+                        <el-option :key="index" :label="item.name" :value="item.id" v-for="(item, index) in packages">
+                        </el-option>
+                    </el-select>
+                </el-form-item> -->
+                <el-form-item :label-width="formLabelWidth" label="提单类型">
+                    <el-select placeholder="请选择类型" v-model="formBill.type">
+                        <el-option label="应用" value="1"></el-option>
+                        <el-option label="套餐" value="3"></el-option>
+                    </el-select>
+                </el-form-item>
+
+                <el-form-item :label-width="formLabelWidth" label="选择产品">
+                    <el-select placeholder="请选择应用" v-model="formBill.active1" v-if="formBill.type==1">
+                        <el-option :key="index" :label="active.name" :value="index" v-for="(active, index) in activeCon1"></el-option>
+                    </el-select>
+
+                    <el-cascader placeholder="请选择套餐"  v-if="formBill.type==3"
+    v-model="formBill.active3"
+    :options="activeCon3" :props="{ expandTrigger: 'hover' }"
+    ></el-cascader>
+
+                </el-form-item>
+
+                <el-form-item :label-width="formLabelWidth" label="选择周期">
+
+                    <div class="time clearfix flex flexWrap">
+                        <div v-for="(item,index) in strategy" :key="index" class="zhouqi cp mb20" :class="{active:formBill.strategy_index == index}" @click="changeActive(index)">{{item.title}}</div>
+                    </div>
+                </el-form-item>
+
+                <el-form-item :label-width="formLabelWidth" label="价格">
+                        <div>{{formBill.price}}<span style="color: red">（代理价：{{(formBill.price * agent.discount)/10}}）</span></div>
+                </el-form-item>
+
+                <!-- <el-form-item :label-width="formLabelWidth" label="周期">
+                    <el-select placeholder="请选择周期" v-model="formBill.cycle">
+                        <el-option label="1年" value="1">
+                        </el-option>
+                        <el-option label="2年" value="2">
+                        </el-option>
+                        <el-option label="3年" value="3">
+                        </el-option>
+                        <el-option label="4年" value="4">
+                        </el-option>
+                        <el-option label="5年" value="5">
+                        </el-option>
+                    </el-select>
+                </el-form-item> -->
+            </el-form>
+            <div class="dialog-footer" slot="footer">
+                <el-button @click="dialogFormVisible = false">
+                    取 消
+                </el-button>
+                <el-button @click="confirm" type="primary">
+                    确 定
+                </el-button>
+            </div>
+        </el-dialog>
+        <!--弹出 end-->
+        <div class="fr">
+            <el-form :model="form" class="fl" label-width="80px" ref="form">
+                <el-select class="fl md10" placeholder="请选择开通类型" v-model="form.type">
+                    <el-option :key="index" :label="type.title" :value="type.id" v-for="(type, index) in types">
+                    </el-option>
+                </el-select>
+                <el-input class="fl inputTxt md10" placeholder="请输入账号或者名称" v-model="form.name">
+                </el-input>
+            </el-form>
+            <span class="fl md10">
+                <el-button @click="search" class="ssuo_btn" size="medium" type="primary btn_lan">
+                    搜  索
+                </el-button>
+            </span>
+            <span class="fl md10">
+                <el-button @click="empty" size="medium">
+                    清  空
+                </el-button>
+            </span>
+        </div>
+    </div>
+    <div class="tab_h center">
+        <el-table :data="tableBill" height="540" style="width: 100%">
+            <el-table-column label="流水号" prop="order_id" width="180">
+            </el-table-column>
+            <el-table-column label="类型" prop="type" width="60">
+            </el-table-column>
+            <el-table-column label="商户名称" prop="username" width="120">
+            </el-table-column>
+            <el-table-column label="小程序名称" prop="applet_name" width="200">
+            </el-table-column>
+            <el-table-column label="客户账号" prop="account" width="140">
+            </el-table-column>
+            <el-table-column label="申请时间" prop="created_at" width="180">
+            </el-table-column>
+            <el-table-column label="周期" prop="cycle" width="80">
+            </el-table-column>
+            <el-table-column label="开通产品" prop="service_name">
+            </el-table-column>
+            <el-table-column label="消耗费用" prop="money" width="100">
+            </el-table-column>
+        </el-table>
+        <!--f分页-->
+        <el-pagination :page-size="size" :total="total" @current-change="pageChange" background="" class="fenPage" layout="prev, pager, next">
+        </el-pagination>
+    </div>
+</div>

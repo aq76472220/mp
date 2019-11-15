@@ -1,0 +1,103 @@
+<div class="customer">
+    <div class="com_til">
+        <span>客户管理</span>
+    </div>
+    <div class="clearfix">
+        <el-button type="primary" class="btn_lan fl" size='small' @click="dialogFormVisible = true">新增客户</el-button>
+        <!--弹出-->
+        <el-dialog title="新增客户" :visible.sync="dialogFormVisible" >
+          <el-form :model="model" :rules="rules" class="addForm" ref="addForm">
+            <el-form-item label="登录账号" placeholder="请输入客户手机号" ref="el_phone_item" :label-width="formLabelWidth" prop='phone' :class="error != '' ? 'is_error' : ''">
+              <el-input v-model="model.phone" @blur="checkPhone"></el-input>
+              <div class="el-form-item__error" v-show="error != ''">{{ error }}</div>
+              <div class="el-form-item__success" v-show="status == 2">该手机号可注册</div>
+              <div class="el-form-item__success" v-show="status == 1">该手机号已注册，请输入验证码添加<el-button size="mini" type="primary" @click="sendCode">获取验证码</el-button></div>
+            </el-form-item>
+            <el-form-item label="验证码" :label-width="formLabelWidth" prop='validateCode' v-if="status == 1">
+              <el-input v-model="model.validateCode" ></el-input>
+            </el-form-item>
+            <el-form-item label="登录密码" :label-width="formLabelWidth" prop='password' v-else>
+              <el-input v-model="model.password" ></el-input>
+            </el-form-item>
+            <el-form-item label="客户名称" :label-width="formLabelWidth">
+              <el-input v-model="model.nickname" ></el-input>
+            </el-form-item>
+          </el-form>
+          <div slot="footer" class="dialog-footer">
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="confirm">确 定</el-button>
+          </div>
+        </el-dialog>
+    <!--弹出 end-->
+        <div class="fr">
+             <el-form ref="form" :model="form" label-width="80px" class='fl'>
+                <el-input v-model="form.name" class="fl inputTxt md10" placeholder="请输入客户的手机号或者名称"></el-input>
+                <el-select v-model="form.region" class="fl md10"  placeholder="请选择客户类型">
+                  <el-option v-for="(type, index) in types" :key="index" :label="type.title" :value="type.id"></el-option>
+                </el-select>
+             </el-form>
+            <span class="fl md10">
+               <el-button type="primary btn_lan" class='ssuo_btn' size="medium" @click="search">搜  索</el-button>
+            </span>
+            <span class="fl md10">
+                <el-button size="medium" @click="empty">清  空</el-button>
+            </span>
+        </div>
+    </div>
+
+    <div class="tab_h center">
+      <el-table
+            :data="tableCustomer"
+            height="540"
+            style="width: 100%" >
+             <el-table-column
+              type="index"
+              width="80"
+              >
+            </el-table-column>
+            <el-table-column
+              prop="nickname"
+              label="客户名称"
+              width="280">
+            </el-table-column>
+            <el-table-column
+              prop="phone"
+              label="客户账号"
+              width="280">
+            </el-table-column>
+            <el-table-column
+              prop="create_time"
+              label="创建时间"
+              width="280">
+            </el-table-column>
+            <el-table-column
+              prop="type"
+              label="客户类型"
+               width="180">
+            </el-table-column>
+             <!--el-table-column
+              prop="lastTime"
+              label="最后登录时间"
+               width="280">
+            </el-table-column-->
+             <el-table-column
+              prop="play"
+              label="操作"
+               >
+                <template slot-scope="scope">
+                    <el-button type="text" @click="applt_view(scope.row.id)">查看</el-button>
+                </template>
+            </el-table-column>
+         </el-table>
+
+         <!--f分页-->
+        <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="total"
+            :page-size="size"
+            @current-change="pageChange"
+            class="fenPage">
+        </el-pagination>
+    </div>
+</div>

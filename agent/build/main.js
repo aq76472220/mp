@@ -1,0 +1,1 @@
+var debug=!1;debug?require(["../config/config","./js/app"]):require(["../config/config","../build/js/app"]);

@@ -1,0 +1,15 @@
+<div style="height: 100%" class="main">
+    <top-header class="clear">
+        <user :user-account="userAccount" @handleClick = "handleClick" :tanShow="tanShow" class="fl"/>
+    </top-header>
+    <aside>
+        <div class="mainBox">
+            <div class="xcxCont">
+                <left-bar ref="sideMenu" :active-name="$route.name" @on-select="turnToPage" :menu-list="menuList"/>
+                <router-view/>
+           </div>
+            <footer-bt/>
+        </div>
+    </aside>
+    <account-setting :setting-modal='settingModal' :tanShow="tanShow" @on-success-valid="handleSubmit" ref="accountSetting"></account-setting>
+</div>

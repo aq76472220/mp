@@ -1,0 +1,1 @@
+define("_path",["require"],function(e){return{methods:{_path:function(s){return e.toUrl(s)}}}});var modules=["vue","ELEMENT","museUi","routes/index","store/index","config/index","css!assets/css/base.css"];require(modules,function(e,s,n,t,o,u){e.prototype.$config=u,e.use(s),e.use(n),new e({el:"#layout",router:t,store:o})}),define("app",function(){});

@@ -1,0 +1,1 @@
+var modules=["_path","text!../views/tpl-header.html"];define(modules,function(e,t){return{name:"topHeader",template:t,data:function(){return{agent_logo:""}},mounted:function(){var e=JSON.parse(window.localStorage.getItem("agent_web_info"));e.agent_isoem?this.agent_logo=e.agent_logo:this.agent_logo=this._path("./assets/images/logo.png")},mixins:[e]}});

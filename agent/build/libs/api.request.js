@@ -1,0 +1,1 @@
+define(["libs/axios","config/index"],function(e,n){return new e("development"===process.env.NODE_ENV?n.baseUrl.dev:n.baseUrl.pro)});

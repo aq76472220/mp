@@ -1,0 +1,21 @@
+<div class="settingBox" v-show="dialogFormVisible">
+    <div class="tanBox">
+        <div class="el-dialog__header" style="position: relative;">
+            <span class="el-dialog__title">账号设置</span>
+            <button type="button" aria-label="Close" class="el-dialog__headerbtn" @click="dialogBtn">
+            <i class="el-dialog__close el-icon el-icon-close"></i></button>
+        </div>
+        <div class="el-dialog__body">
+            <el-form :model="model" :rules="rules" ref="addForm" class="addForm">
+				<el-form-item label="登录密码" :label-width="formLabelWidth" prop='password'>
+					<el-input v-model="model.password" ></el-input>
+				</el-form-item>
+			</el-form>
+        </div>
+        <div slot="footer" class="el-dialog__footer">
+            <el-button @click="dialogBtn">取 消</el-button>
+            <el-button type="primary" @click="update">确 定</el-button>
+        </div>
+    </div>
+     <!--账号设置弹窗 end-->
+</div>

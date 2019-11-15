@@ -1,0 +1,7 @@
+<div class="rg_hao" @mouseover="bt_show" @mouseout="btn_hide">
+    <span class="showHao">{{ userAccount }}<i class="el-icon-caret-bottom"></i></span>
+    <ul class="top_haoShow" v-if="isShow">
+        <li @click="handleClick('setting')">账号设置</li>
+        <li @click="handleClick('logout')">安全退出</li>
+    </ul>
+</div>

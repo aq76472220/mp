@@ -1,0 +1,98 @@
+/*
+* @Author: brooke
+* @Date:   2018-10-29 13:33:09
+* @Last Modified by:   pigcms
+* @Last Modified time: 2019-10-24 10:43:45
+*/
+.mingxi_box{
+    background: #fff;
+    box-shadow:3px 0px 20px #ddd;
+    border-radius: 4px;
+}
+.mingxi_box .grid-content:nth-last-child{
+    border-right:none
+}
+.grid-content{
+    margin: 55px 0;
+    border-right: 1px solid #ecedf1;
+}
+.dl_jin{
+    padding:0px 0 0px 68px;
+    text-align: left;
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+}
+.dl_jin p.pd1{
+    font-size: 14px;
+    color:#666;
+    padding: 5px 10px;
+}
+.dl_jin p.pd2{
+    font-size: 32px;
+    font-weight: bold;
+}
+.dl_jin1{
+    background: url(../images/10.png) left center no-repeat;
+}
+.dl_jin2{
+    background: url(../images/11.png) left center no-repeat;
+}
+.dl_jin3{
+    background: url(../images/12.png) left center no-repeat;
+}
+.el-input__inner{
+    background: #fff!important;
+}
+.ssuo_btn{
+    background:#4c69fc;
+}
+.btn_box{
+    padding: 30px 25px;
+}
+.btn_box span{
+    padding-right: 20px;
+}
+
+.sousuo { height: 30px; }
+
+.incomeBox .mu-input{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    min-height: 40px;
+}
+
+.incomeBox .mu-input .mu-text-field-input{
+    height: 40px;
+    border: 1px solid #dcdfe6;
+    background: #fff;
+    border-bottom: none;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 0 15px;
+    color: #606266;
+}
+
+.incomeBox .mu-input .mu-input-line{
+    width: 228px;
+    left: 15px;
+    bottom: 0px;
+    background-color: #dcdfe6;
+}
+
+.incomeBox .mu-input .mu-input-focus-line{
+    width: 228px;
+    left: 15px;
+    bottom: 0px;
+    height: 1px;
+}
+
+.mu-popover .mu-picker .mu-picker-display{
+    display: none;
+}
+
+.incomeBox .el-button span{
+    width: 100%;
+    display: block;
+}

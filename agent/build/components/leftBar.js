@@ -1,0 +1,1 @@
+var modules=["_path","text!../views/left-bar.html"];define(modules,function(e,t){return{name:"leftBar",template:t,props:["menuList","activeName"],data:function(){return{}},methods:{handleSelect:function(e){this.$emit("on-select",e)},getNameOrHref:function(e){return e.href?"isTurnByHref_"+e.href:e.name}},mixins:[e]}});
